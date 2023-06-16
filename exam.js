@@ -1,12 +1,18 @@
+// Paso 1 
+
 const axios = require('axios');
 const chalk = require('chalk');
 const fs = require('fs');
+
+// Paso 2
 
 async function fetchPokemon(numero) {
   const url = `https://pokeapi.co/api/v2/pokemon/${numero}`;
   const response = await axios.get(url);
   return response.data;
 }
+
+// Paso 3
 
 async function getPokemonData() {
   try {
@@ -27,6 +33,8 @@ async function getPokemonData() {
 
 getPokemonData();
 
+// Paso 4
+
 function formatPokemon(name, types) {
   if (!name || !types) {
     throw new Error("Datos de Pokémon incompletos");
@@ -41,6 +49,8 @@ function formatPokemon(name, types) {
   return formattedString;
 }
 
+// Paso 5
+
 try {
   const pokemonName = "Pikachu";
   const pokemonTypes = ["Eléctrico"];
@@ -50,6 +60,7 @@ try {
   console.log(error.message);
 }
 
+// Paso 6
 
 try {
   const fileContent = fs.readFileSync('datos.txt', 'utf-8');
@@ -58,6 +69,8 @@ try {
   console.log("El archivo 'datos.txt' no existe");
 }
 
+// Paso 7
+
 function writeToFile(message) {
   try {
     fs.writeFileSync('resultados.txt', message);
@@ -65,6 +78,8 @@ function writeToFile(message) {
     throw new Error("Error al escribir en el archivo 'resultados.txt'");
   }
 }
+
+// Paso 8
 
 try {
   writeToFile("Examen finalizado");
