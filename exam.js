@@ -52,8 +52,8 @@ function formatPokemon(name, types) {
 // Paso 5
 
 try {
-  const pokemonName = "Pikachu";
-  const pokemonTypes = ["Eléctrico"];
+  const pokemonName = "Snorlax";
+  const pokemonTypes = ["normal"];
   const formattedResult = formatPokemon(pokemonName, pokemonTypes);
   console.log(formattedResult);
 } catch (error) {
